@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using static System.Console;
 
@@ -90,10 +91,10 @@ namespace BattleShips
             
             for (int i = 0; i < ShipsOfFirstPlayer.Count; i++)
             {
-                var currentInfo = ShipsOfFirstPlayer[i];
+                var currentInfo = ShipsOfFirstPlayer[i].Split('-').ToArray();
                 
                 int currentRow = int.Parse(currentInfo[0].ToString());
-                int currentCol = int.Parse(currentInfo[2].ToString());
+                int currentCol = int.Parse(currentInfo[1].ToString());
                 if (y == currentCol && x == currentRow)
                 {
                     ShipsOfFirstPlayer.Remove($"{currentRow}-{currentCol}");
@@ -109,9 +110,9 @@ namespace BattleShips
 
             for (int i = 0; i < ShipsOfSecondPlayer.Count; i++)
             {
-                var currentInfo = ShipsOfSecondPlayer[i];
+                var currentInfo = ShipsOfSecondPlayer[i].Split('-').ToArray();
                 int currentRow = int.Parse(currentInfo[0].ToString());
-                int currentCol = int.Parse(currentInfo[2].ToString());
+                int currentCol = int.Parse(currentInfo[1].ToString());
                 if (y == currentCol && x == currentRow)
                 {
                     ShipsOfSecondPlayer.Remove($"{currentRow}-{currentCol}");

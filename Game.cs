@@ -14,7 +14,7 @@ namespace BattleShips
         public bool IsEnter;
         public void Start()
         {
-            MyWorld = new World(10, 10);
+            MyWorld = new World(20, 20);
             Player1 = new Player();
             Player2 = new Player2();
             MyWorld.DrawShips();
